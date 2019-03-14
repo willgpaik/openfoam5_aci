@@ -69,7 +69,8 @@ Modified by Will
     mkdir -p /gpfs/group
     mkdir -p /var/spool/torque
     
+    chmod +x /opt/openfoam5/etc/bashrc
     cp /opt/openfoam5/etc/bashrc /.singularity.d/env/openfoam.sh
-    chmod +x /.singularity.d/env/openfoam.sh
+    
     
     
