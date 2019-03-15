@@ -69,7 +69,7 @@ Modified by Will
     mkdir -p /gpfs/group
     mkdir -p /var/spool/torque
     
-    cp /opt/openfoam5/etc/bashrc /.singularity.d/env/openfoam.sh
+#    cp /opt/openfoam5/etc/bashrc /.singularity.d/env/openfoam.sh
     
     
     
