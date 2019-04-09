@@ -15,6 +15,8 @@ From:openfoam/openfoam5-paraview54
     export MPI_ARCH_FLAGS="-DMPICH_SKIP_MPICXX"
     export MPI_ARCH_INC="-I$MPI_ARCH_PATH/include"
     export MPI_ARCH_LIBS='-L$(MPI_ARCH_PATH)/lib -lmpich -lmpichcxx -lmpl -lopa -lrt'
+    
+    source /opt/openfoam5/etc/bashrc
 
 %labels
 Author jpj5196
