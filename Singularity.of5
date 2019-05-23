@@ -33,7 +33,7 @@ From:openfoam/openfoam5-paraview54
       libncurses-dev \
       libxt-dev \
       libscotch-dev \
-      libptscotch-dev
+      libptscotch-dev \
       libvtk6-dev \
       python-numpy \
       octave \
