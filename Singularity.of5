@@ -39,7 +39,7 @@ From:openfoam/openfoam5-paraview54
           octave \
           eog
       
-    echo ". /opt/openfoam5/etc/bashrc" >> /.singularity.d/env/01-base.sh
+    #echo ". /opt/openfoam5/etc/bashrc" >> /.singularity.d/env/01-base.sh
       
     # Link directories
     mkdir -p /storage/home
