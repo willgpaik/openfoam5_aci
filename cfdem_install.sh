@@ -1,5 +1,7 @@
 #!/bin/bash
 
+. /opt/openfoam5/etc/bashrc
+
 cd /opt/sw
 BASE=$PWD
 
@@ -13,7 +15,6 @@ git clone git://github.com/CFDEMproject/LPP.git lpp
 
 cd $BASE
 
-. /opt/openfoam5/etc/bashrc
 export CFDEM_VERSION=PUBLIC
 export CFDEM_PROJECT_DIR=/opt/sw/CFDEM/CFDEMcoupling-$CFDEM_VERSION-$WM_PROJECT_VERSION
 #export CFDEM_PROJECT_USER_DIR=/opt/sw/CFDEM/$LOGNAME-$CFDEM_VERSION-$WM_PROJECT_VERSION
