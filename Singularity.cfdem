@@ -9,12 +9,22 @@ From: shub://willgpaik/openfoam5_aci:of5
     source /opt/openfoam5/etc/bashrc
     export CFDEM_VERSION=PUBLIC
     export CFDEM_PROJECT_DIR=/opt/sw/CFDEM/CFDEMcoupling-$CFDEM_VERSION-$WM_PROJECT_VERSION
-    export CFDEM_PROJECT_USER_DIR=/opt/sw/CFDEM/$LOGNAME-$CFDEM_VERSION-$WM_PROJECT_VERSION
+    #export CFDEM_PROJECT_USER_DIR=/opt/sw/CFDEM/$LOGNAME-$CFDEM_VERSION-$WM_PROJECT_VERSION
     export CFDEM_bashrc=$CFDEM_PROJECT_DIR/src/lagrangian/cfdemParticle/etc/bashrc
     export CFDEM_LIGGGHTS_SRC_DIR=/opt/sw/LIGGGHTS/LIGGGHTS-PUBLIC/src
     export CFDEM_LIGGGHTS_MAKEFILE_NAME=auto
     export CFDEM_LPP_DIR=/opt/sw/LIGGGHTS/lpp/src
+    export CFDEM_SRC_DIR=$CFDEM_PROJECT_DIR/src
+    export CFDEM_SOLVER_DIR=$CFDEM_PROJECT_DIR/applications/solvers
+    export CFDEM_DOC_DIR=$CFDEM_PROJECT_DIR/doc
+    export CFDEM_UT_DIR=$CFDEM_PROJECT_DIR/applications/utilities
+    export CFDEM_TUT_DIR=$CFDEM_PROJECT_DIR/tutorials
+    export CFDEM_LIGGGHTS_MAKEFILE_POSTIFX=
+    export CFDEM_VERBOSE=false
     source $CFDEM_bashrc
+    
+    export PATH=/storage/work/cxl1166/sw/LIGGGHTS/lpp:$PATH
+
     
 
 %runscript
@@ -35,10 +45,12 @@ From: shub://willgpaik/openfoam5_aci:of5
     git clone git://github.com/CFDEMproject/LIGGGHTS-PUBLIC.git
     git clone git://github.com/CFDEMproject/LPP.git lpp
     
+    cd /opt/sw
+    
     source /opt/openfoam5/etc/bashrc
     export CFDEM_VERSION=PUBLIC
     export CFDEM_PROJECT_DIR=/opt/sw/CFDEM/CFDEMcoupling-$CFDEM_VERSION-$WM_PROJECT_VERSION
-    export CFDEM_PROJECT_USER_DIR=/opt/sw/CFDEM/$LOGNAME-$CFDEM_VERSION-$WM_PROJECT_VERSION
+    #export CFDEM_PROJECT_USER_DIR=/opt/sw/CFDEM/$LOGNAME-$CFDEM_VERSION-$WM_PROJECT_VERSION
     export CFDEM_bashrc=$CFDEM_PROJECT_DIR/src/lagrangian/cfdemParticle/etc/bashrc
     export CFDEM_LIGGGHTS_SRC_DIR=/opt/sw/LIGGGHTS/LIGGGHTS-PUBLIC/src
     export CFDEM_LIGGGHTS_MAKEFILE_NAME=auto
