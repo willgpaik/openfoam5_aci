@@ -4,6 +4,21 @@ From:openfoam/openfoam5-paraview54
 %labels
 
 
+%environment
+    bash
+    export LD_LIBRARY_PATH=/opt/openfoam5/platforms/linux64GccDPInt32Opt/lib:$LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH=/lib64:$LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH=/lib:$LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH=/usr/lib:$LD_LIBRARY_PATH
+    export CPATH=/usr/include:$CPATH
+    export CPATH=/usr/lib/openmpi/include:$CPATH
+    export MPI_ROOT=/usr/lib/openmpi
+    export MPI_ARCH_FLAGS="-DMPICH_SKIP_MPICXX"
+    export MPI_ARCH_INC="-I$MPI_ARCH_PATH/include"
+    export MPI_ARCH_LIBS='-L$(MPI_ARCH_PATH)/lib -lmpich -lmpichcxx -lmpl -lopa -lrt'
+    . /opt/openfoam5/etc/bashrc
+
+
 %post
     apt-get update -y
     apt-get install -y git-core
@@ -35,18 +50,5 @@ From:openfoam/openfoam5-paraview54
     mkdir -p /gpfs/scratch
     mkdir -p /gpfs/group
     mkdir -p /var/spool/torque
-
-%environment
-    export LD_LIBRARY_PATH=/opt/openfoam5/platforms/linux64GccDPInt32Opt/lib:$LD_LIBRARY_PATH
-    export LD_LIBRARY_PATH=/lib64:$LD_LIBRARY_PATH
-    export LD_LIBRARY_PATH=/lib:$LD_LIBRARY_PATH
-    export LD_LIBRARY_PATH=/usr/lib:$LD_LIBRARY_PATH
-    export CPATH=/usr/include:$CPATH
-    export CPATH=/usr/lib/openmpi/include:$CPATH
-    export MPI_ROOT=/usr/lib/openmpi
-    export MPI_ARCH_FLAGS="-DMPICH_SKIP_MPICXX"
-    export MPI_ARCH_INC="-I$MPI_ARCH_PATH/include"
-    export MPI_ARCH_LIBS='-L$(MPI_ARCH_PATH)/lib -lmpich -lmpichcxx -lmpl -lopa -lrt'
-    . /opt/openfoam5/etc/bashrc
     
     
