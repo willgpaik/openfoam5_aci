@@ -5,6 +5,8 @@ From: shub://willgpaik/openfoam5_aci:of5
 %files
 
 %environment 
+    bash
+    source /opt/openfoam5/etc/bashrc
     export CFDEM_VERSION=PUBLIC
     export CFDEM_PROJECT_DIR=/opt/sw/CFDEM/CFDEMcoupling-$CFDEM_VERSION-$WM_PROJECT_VERSION
     export CFDEM_PROJECT_USER_DIR=/opt/sw/CFDEM/$LOGNAME-$CFDEM_VERSION-$WM_PROJECT_VERSION
@@ -19,6 +21,7 @@ From: shub://willgpaik/openfoam5_aci:of5
 
 
 %post
+    bash
     
     # Download CFDEM
     mkdir -p /opt/sw
