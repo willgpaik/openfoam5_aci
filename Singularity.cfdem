@@ -21,6 +21,7 @@ From: shub://willgpaik/openfoam5_aci:of5
 %post
     
     # Download CFDEM
+    mkdir -p /opt/sw
     cd /opt/sw
     mkdir CFDEM
     cd CFDEM
