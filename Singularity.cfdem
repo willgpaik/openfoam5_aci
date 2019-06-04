@@ -1,11 +1,23 @@
-BootStrap: shub
-From: shub://willgpaik/openfoam5_aci:of5
+BootStrap: docker
+From:openfoam/openfoam5-paraview54
+
 %setup
 
 %files
 
 %environment 
     bash
+    export LD_LIBRARY_PATH=/opt/openfoam5/platforms/linux64GccDPInt32Opt/lib:$LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH=/lib64:$LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH=/lib:$LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH=/usr/lib:$LD_LIBRARY_PATH
+    export CPATH=/usr/include:$CPATH
+    export CPATH=/usr/lib/openmpi/include:$CPATH
+    export MPI_ROOT=/usr/lib/openmpi
+    export MPI_ARCH_FLAGS="-DMPICH_SKIP_MPICXX"
+    export MPI_ARCH_INC="-I$MPI_ARCH_PATH/include"
+    export MPI_ARCH_LIBS='-L$(MPI_ARCH_PATH)/lib -lmpich -lmpichcxx -lmpl -lopa -lrt'
+
     source /opt/openfoam5/etc/bashrc
     export CFDEM_VERSION=PUBLIC
     export CFDEM_PROJECT_DIR=/opt/sw/CFDEM/CFDEMcoupling-$CFDEM_VERSION-$WM_PROJECT_VERSION
@@ -31,6 +43,28 @@ From: shub://willgpaik/openfoam5_aci:of5
 
 
 %post
+    apt-get update -y
+    apt-get install -y git-core
+    apt-get install -y build-essential
+    apt-get -y install flex \
+          bison \
+          cmake \
+          zlib1g-dev \
+          libboost-system-dev \
+          libboost-thread-dev \
+          libopenmpi-dev \
+          openmpi-bin \
+          gnuplot \
+          libreadline-dev \
+          libncurses-dev \
+          libxt-dev \
+          libscotch-dev \
+          libptscotch-dev \
+          libvtk6-dev \
+          python-numpy \
+          octave \
+          eog
+    
 
     mkdir -p /opt/sw
     
@@ -41,5 +75,12 @@ From: shub://willgpaik/openfoam5_aci:of5
     ./cfdem_install.sh
     
     rm cfdem_install.sh
+    
+    # Link directories
+    mkdir -p /storage/home
+    mkdir -p /storage/work
+    mkdir -p /gpfs/scratch
+    mkdir -p /gpfs/group
+    mkdir -p /var/spool/torque
     
     
