@@ -15,8 +15,6 @@ export MPI_ARCH_INC="-I$MPI_ARCH_PATH/include"
 export MPI_ARCH_LIBS='-L$(MPI_ARCH_PATH)/lib -lmpich -lmpichcxx -lmpl -lopa -lrt'
 . /opt/openfoam5/etc/bashrc
 
-icoFoam --help
-
 mkdir CFDEM
 mkdir LIGGGHTS
 cd CFDEM
@@ -42,6 +40,14 @@ export CFDEM_bashrc=$CFDEM_PROJECT_DIR/src/lagrangian/cfdemParticle/etc/bashrc
 export CFDEM_LIGGGHTS_SRC_DIR=/opt/sw/LIGGGHTS/LIGGGHTS-PUBLIC/src
 export CFDEM_LIGGGHTS_MAKEFILE_NAME=auto
 export CFDEM_LPP_DIR=/opt/sw/LIGGGHTS/lpp/src
+export CFDEM_SRC_DIR=$CFDEM_PROJECT_DIR/src
+export CFDEM_SOLVER_DIR=$CFDEM_PROJECT_DIR/applications/solvers
+export CFDEM_DOC_DIR=$CFDEM_PROJECT_DIR/doc
+export CFDEM_UT_DIR=$CFDEM_PROJECT_DIR/applications/utilities
+export CFDEM_TUT_DIR=$CFDEM_PROJECT_DIR/tutorials
+export CFDEM_LIGGGHTS_MAKEFILE_POSTIFX=
+export CFDEM_VERBOSE=false
+
 . $CFDEM_bashrc
 
 cfdemSysTest
