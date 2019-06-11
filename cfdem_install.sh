@@ -1,5 +1,8 @@
 #!/bin/bash
 
+cd /opt/sw
+BASE=$PWD
+
 export LD_LIBRARY_PATH=/opt/openfoam5/platforms/linux64GccDPInt32Opt/lib:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/lib64:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/lib:$LD_LIBRARY_PATH
@@ -11,8 +14,8 @@ export MPI_ARCH_FLAGS="-DMPICH_SKIP_MPICXX"
 export MPI_ARCH_INC="-I$MPI_ARCH_PATH/include"
 export MPI_ARCH_LIBS='-L$(MPI_ARCH_PATH)/lib -lmpich -lmpichcxx -lmpl -lopa -lrt'
 . /opt/openfoam5/etc/bashrc
-cd /opt/sw
-BASE=$PWD
+
+icoFoam --help
 
 mkdir CFDEM
 mkdir LIGGGHTS
