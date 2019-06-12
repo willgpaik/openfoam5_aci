@@ -28,7 +28,7 @@ cd $BASE
 export PATH=$PATH:/opt/sw/LIGGGHTS/lpp/src:/opt/sw/LIGGGHTS-PUBLIC/src
 export PATH=$PATH:/opt/sw/LIGGGHTS/LIGGGHTS-PUBLIC/lib/vtk/install/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/openfoam5/platforms/linux64Gcc48DPInt32Opt/lib
-export LD_LIBRARY_PATH:$LD_LIBRARY_PATH:/opt/sw/LIGGGHTS/LIGGGHTS-PUBLIC/lib/vtk/install/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/sw/LIGGGHTS/LIGGGHTS-PUBLIC/lib/vtk/install/lib
 export CPATH=$CPATH:/opt/openfoam5/platforms/linux64Gcc48DPInt32Opt/include
 export CPATH=$CPATH:/opt/sw/LIGGGHTS/IGGGHTS-PUBLIC/lib/vtk/install/include/vtk-8.0
 
