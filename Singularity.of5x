@@ -7,6 +7,7 @@ From: shub://willgpaik/centos7_aci:latest
 
 
 %post
+  # https://openfoamwiki.net/index.php/Installation/Linux/OpenFOAM-5.x/CentOS_SL_RHEL
   yum -y groupinstall 'Development Tools' 
   yum -y install zlib-devel libXext-devel libGLU-devel libXt-devel libXrender-devel libXinerama-devel \
       libpng-devel libXrandr-devel libXi-devel libXft-devel libjpeg-turbo-devel libXcursor-devel \
