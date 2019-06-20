@@ -9,7 +9,8 @@
 # qsub -A open -I -l nodes=1:ppn=20:scivybridge -l walltime=6:00:00
 
 # Change path to directory if needed
-WORK=$HOME/scratch
+mkdir -p /opt/sw
+WORK=/opt/sw
 mkdir $WORK/OpenFOAM
 BASE=$WORK/OpenFOAM
 WM_PROJECT=OpenFOAM-5.x
@@ -20,7 +21,7 @@ sed -i '/of5x/d' $HOME/.bashrc
 if [[ ! -z "$PBS_NODEFILE" ]]; then
 	NP=$(wc -l $PBS_NODEFILE | awk '{print $1}')
 else
-	NP=1;
+	NP=2;
 fi
 echo Number of threads used for installation: $NP
 
@@ -45,13 +46,6 @@ if [[ ! -d "./download" ]]; then
 	tar -xjf download/boost_1_55_0.tar.bz2
 	tar -xjf download/openmpi-2.1.1.tar.bz2
 	tar -xzf download/ParaView-v5.4.0.tar.gz --transform='s/ParaView-v5.4.0/ParaView-5.4.0/'
-
-	wget -nc -P download http://mirror.centos.org/centos/6/os/x86_64/Packages/mesa-libGLU-devel-11.0.7-4.el6.x86_64.rpm
-	rpm2cpio ./download/mesa-libGLU-devel-11.0.7-4.el6.x86_64.rpm | cpio -idmv
-
-	wget -nc -P download http://mirror.centos.org/centos/6/os/x86_64/Packages/gstreamer-plugins-base-devel-0.10.29-2.el6.x86_64.rpm
-	rpm2cpio ./download/gstreamer-plugins-base-devel-0.10.29-2.el6.x86_64.rpm | cpio -idmv
-	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD/usr/lib64
 fi
 
 cd $BASE
@@ -65,12 +59,12 @@ ARCH=$(uname -m)
 echo Running on $ARCH architecture
 if [[ "$ARCH" == 'i386' ]]; then
 	source $WORK/OpenFOAM/OpenFOAM-5.x/etc/bashrc WM_COMPILER_TYPE=ThirdParty WM_COMPILER=Gcc48 WM_ARCH_OPTION=32 WM_MPLIB=OPENMPI FOAMY_HEX_MESH=yes
-	echo "alias of5x='source $BASE/OpenFOAM-5.x/etc/bashrc $FOAM_SETTINGS'" >> $HOME/.bashrc
+	echo "alias of5x='source $BASE/OpenFOAM-5.x/etc/bashrc $FOAM_SETTINGS'" >> /.singularity.d/env/90-environment.sh
 elif [[ "$ARCH" == 'x86_64' ]]; then
 	source $WORK/OpenFOAM/OpenFOAM-5.x/etc/bashrc WM_LABEL_SIZE=64 WM_COMPILER_TYPE=ThirdParty WM_COMPILER=Gcc48 WM_MPLIB=OPENMPI FOAMY_HEX_MESH=yes
-	echo "alias of5x='source $BASE/OpenFOAM-5.x/etc/bashrc $FOAM_SETTINGS'" >> $HOME/.bashrc
+	echo "alias of5x='source $BASE/OpenFOAM-5.x/etc/bashrc $FOAM_SETTINGS'" >> /.singularity.d/env/90-environment.sh
 fi
-source $HOME/.bashrc
+source /.singularity.d/env/90-environment.sh
 
 #echo "of5x" >> $HOME/.bashrc
 
