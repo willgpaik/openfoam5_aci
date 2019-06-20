@@ -2,6 +2,8 @@ BootStrap: shub
 From: shub://willgpaik/centos7_aci:latest
 
 %environment
+  bash
+  source /opt/sw/OpenFOAM/OpenFOAM-5.x/etc/bashrc WM_LABEL_SIZE=64 WM_MPLIB=OPENMPI FOAMY_HEX_MESH=yes
 
 
 %post
