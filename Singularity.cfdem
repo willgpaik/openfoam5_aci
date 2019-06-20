@@ -65,7 +65,7 @@ From:openfoam/openfoam5-paraview54
           octave \
           eog
     
-    apt-get -y install libvtk6.2 libvtk6-dev
+    apt-get -y install libvtk6.2 libvtk6-dev cmake
     
 
     mkdir -p /opt/sw
