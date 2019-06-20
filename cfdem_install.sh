@@ -24,8 +24,8 @@ git clone git://github.com/CFDEMproject/LIGGGHTS-PUBLIC.git
 git clone git://github.com/CFDEMproject/LPP.git lpp
 cd LIGGGHTS-PUBLIC/src/MAKE
 sed -i -e '22s/.*/AUTOINSTALL_VTK = "ON"/g' Makefile.user_default
-sed -i -e '130s/.*/VTK_INC_USR=-I/opt/sw/LIGGGHTS/LIGGGHTS-PUBLIC/lib/vtk/install/include/vtk-8.0/g' Makefile.user_default
-sed -i -e '132s/.*/VTK_LIB_USR=-L/opt/sw/LIGGGHTS/LIGGGHTS-PUBLIC/lib/vtk/install/lib/g' Makefile.user_default
+sed -i -e '130s#.*#VTK_INC_USR=-I/opt/sw/LIGGGHTS/LIGGGHTS-PUBLIC/lib/vtk/install/include/vtk-8.0#g' Makefile.user_default
+sed -i -e '132s#.*#VTK_LIB_USR=-L/opt/sw/LIGGGHTS/LIGGGHTS-PUBLIC/lib/vtk/install/lib#g' Makefile.user_default
 
 cd $BASE
 
