@@ -5,8 +5,8 @@ From: shub://willgpaik/centos7_aci:latest
 
 
 %post
-  yum groupinstall 'Development Tools' 
-  yum install zlib-devel libXext-devel libGLU-devel libXt-devel libXrender-devel libXinerama-devel \
+  yum -y groupinstall 'Development Tools' 
+  yum -y install zlib-devel libXext-devel libGLU-devel libXt-devel libXrender-devel libXinerama-devel \
       libpng-devel libXrandr-devel libXi-devel libXft-devel libjpeg-turbo-devel libXcursor-devel \
       readline-devel ncurses-devel python python-devel cmake qt-devel qt-assistant \
       mpfr-devel gmp-devel
