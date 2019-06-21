@@ -40,11 +40,12 @@ From: shub://willgpaik/centos7_aci:latest
   
   #echo "alias of5x='source \$HOME/OpenFOAM/OpenFOAM-5.x/etc/bashrc $FOAM_SETTINGS'" >> /.singularity.d/env/90-environment.sh
   
+  bash
   source /opt/sw/OpenFOAM/OpenFOAM-5.x/etc/bashrc WM_LABEL_SIZE=64 WM_MPLIB=OPENMPI FOAMY_HEX_MESH=yes
   
   of5x
   
-  icoFoam --help
+  icoFoam -help
   
   cd $WM_THIRD_PARTY_DIR
   ./makeCmake > log.makeCmake 2>&1
