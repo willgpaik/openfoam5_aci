@@ -52,7 +52,7 @@ From: shub://willgpaik/centos7_aci:latest
   wmRefresh
   
   cd $WM_THIRD_PARTY_DIR
-  ./Allwmake > log.make 2>&1
+  ./Allwmake -j 2 > log.make 2>&1
   wmRefresh
   
   cd $WM_THIRD_PARTY_DIR
