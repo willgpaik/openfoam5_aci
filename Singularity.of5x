@@ -44,6 +44,8 @@ From: shub://willgpaik/centos7_aci:latest
   
   of5x
   
+  icoFoam --help
+  
   cd $WM_THIRD_PARTY_DIR
   ./makeCmake > log.makeCmake 2>&1
   wmRefresh
