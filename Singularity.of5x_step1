@@ -47,13 +47,14 @@ From: shub://willgpaik/centos7_aci:latest
   
   icoFoam -help
   
+  # Don't need to build cmake 3.9 since source container already has cmake 3
   #cd $WM_THIRD_PARTY_DIR
   #./makeCmake > log.makeCmake 2>&1
   #wmRefresh
   
-  #cd $WM_THIRD_PARTY_DIR
-  #./Allwmake -j 2 > log.make 2>&1
-  #wmRefresh
+  cd $WM_THIRD_PARTY_DIR
+  ./Allwmake -j 2 > log.make 2>&1
+  wmRefresh
   
   #cd $WM_THIRD_PARTY_DIR
  
