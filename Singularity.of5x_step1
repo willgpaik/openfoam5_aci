@@ -21,13 +21,13 @@ From: shub://willgpaik/centos7_aci:latest
   
   cd ThirdParty-5.x
   mkdir download
-  wget -P download  https://www.cmake.org/files/v3.9/cmake-3.9.0.tar.gz
+  #wget -P download  https://www.cmake.org/files/v3.9/cmake-3.9.0.tar.gz
   wget -P download  https://github.com/CGAL/cgal/releases/download/releases%2FCGAL-4.10/CGAL-4.10.tar.xz
   wget -P download https://sourceforge.net/projects/boost/files/boost/1.55.0/boost_1_55_0.tar.bz2
   wget -P download https://www.open-mpi.org/software/ompi/v2.1/downloads/openmpi-2.1.1.tar.bz2
   wget -P download http://www.paraview.org/files/v5.4/ParaView-v5.4.0.tar.gz
   
-  tar -xzf download/cmake-3.9.0.tar.gz
+  #tar -xzf download/cmake-3.9.0.tar.gz
   tar -xJf download/CGAL-4.10.tar.xz
   tar -xjf download/boost_1_55_0.tar.bz2
   tar -xjf download/openmpi-2.1.1.tar.bz2
@@ -47,20 +47,20 @@ From: shub://willgpaik/centos7_aci:latest
   
   icoFoam -help
   
-  cd $WM_THIRD_PARTY_DIR
-  ./makeCmake > log.makeCmake 2>&1
-  wmRefresh
+  #cd $WM_THIRD_PARTY_DIR
+  #./makeCmake > log.makeCmake 2>&1
+  #wmRefresh
   
-  cd $WM_THIRD_PARTY_DIR
-  ./Allwmake -j 2 > log.make 2>&1
-  wmRefresh
+  #cd $WM_THIRD_PARTY_DIR
+  #./Allwmake -j 2 > log.make 2>&1
+  #wmRefresh
   
-  cd $WM_THIRD_PARTY_DIR
+  #cd $WM_THIRD_PARTY_DIR
  
   #this will take a while... somewhere between 30 minutes to 2 hours or more
-  ./makeParaView -mpi -python -qmake $(which qmake-qt4) > log.makePV 2>&1
+  #./makeParaView -mpi -python -qmake $(which qmake-qt4) > log.makePV 2>&1
   
-  wmRefresh
+  #wmRefresh
   
-  ./Allwmake -j 2 > log.make 2>&1
+  #./Allwmake -j 2 > log.make 2>&1
 
