@@ -14,6 +14,8 @@ From: shub://willgpaik/centos7_aci:latest
       readline-devel ncurses-devel python python-devel cmake qt-devel qt-assistant \
       mpfr-devel gmp-devel
       
+  scl enable devtoolset-8 bash
+      
   mkdir -p /opt/sw/OpenFOAM
   cd /opt/sw/OpenFOAM
   git clone https://github.com/OpenFOAM/OpenFOAM-5.x.git
