@@ -49,7 +49,7 @@ From: shub://willgpaik/centos7_aci:latest
   # Install with WM_LABEL_SIZE=32 -> for CFDEM
   source /opt/sw/OpenFOAM/OpenFOAM-5.x/etc/bashrc WM_LABEL_SIZE=32 FOAMY_HEX_MESH=yes
   
-  of5x
+  #of5x
   
   icoFoam -help
   
