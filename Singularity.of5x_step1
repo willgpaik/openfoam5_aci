@@ -23,6 +23,7 @@ From: shub://willgpaik/centos7_aci:latest
   
   cd ThirdParty-5.x
   mkdir download
+  cd download
   #wget -P download  https://www.cmake.org/files/v3.9/cmake-3.9.0.tar.gz
   wget -P download  https://github.com/CGAL/cgal/releases/download/releases%2FCGAL-4.10/CGAL-4.10.tar.xz
   #wget -P download https://sourceforge.net/projects/boost/files/boost/1.55.0/boost_1_55_0.tar.bz2
@@ -35,7 +36,7 @@ From: shub://willgpaik/centos7_aci:latest
   #tar -xjf download/openmpi-2.1.1.tar.bz2
   tar -xzf download/ParaView-v5.4.0.tar.gz --transform='s/ParaView-v5.4.0/ParaView-5.4.0/'
   
-  cd ..
+  cd ../..
   
   #sed -i -e 's/\(boost_version=\)boost-system/\1boost_1_55_0/' OpenFOAM-5.x/etc/config.sh/CGAL
   sed -i -e 's/\(cgal_version=\)cgal-system/\1CGAL-4.10/' OpenFOAM-5.x/etc/config.sh/CGAL
