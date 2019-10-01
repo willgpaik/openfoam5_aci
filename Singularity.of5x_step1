@@ -15,6 +15,11 @@ From: willgpaik/centos7_aci:latest
       mpfr-devel gmp-devel wget git
       
   scl enable devtoolset-8 bash
+  
+  export PATH="$PATH:/usr/lib64/openmpi/bin/"
+  export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib64/openmpi/lib/"
+  export MPI_ROOT=/usr/lib64/openmpi/
+  export BOOST_ROOT=/usr/local/
       
   mkdir -p /opt/sw/OpenFOAM
   cd /opt/sw/OpenFOAM
