@@ -23,6 +23,8 @@ From: centos:7
   #export MPI_ROOT=/usr/lib64/openmpi/
   #export BOOST_ROOT=/usr/local/
       
+  alias wmRefresh="echo blah"
+  
   mkdir -p /opt/sw/OpenFOAM
   cd /opt/sw/OpenFOAM
   git clone https://github.com/OpenFOAM/OpenFOAM-5.x.git
