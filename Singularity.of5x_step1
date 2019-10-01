@@ -24,6 +24,7 @@ From: centos:7
   #export BOOST_ROOT=/usr/local/
       
   alias wmRefresh="echo blah"
+  set +e
   
   mkdir -p /opt/sw/OpenFOAM
   cd /opt/sw/OpenFOAM
