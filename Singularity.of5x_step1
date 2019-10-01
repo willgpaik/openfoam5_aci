@@ -69,8 +69,8 @@ From: centos:7
   #cd $WM_THIRD_PARTY_DIR
  
   #this will take a while... somewhere between 30 minutes to 2 hours or more
-  #./makeParaView -mpi -python -qmake $(which qmake-qt4) > log.makePV 2>&1
+  ./makeParaView -mpi -python -qmake $(which qmake-qt4) > log.makePV 2>&1
   
-  #wmRefresh
+  wmRefresh
   
-  #./Allwmake -j 2 > log.make 2>&1
+  ./Allwmake -j 2 > log.make 2>&1
