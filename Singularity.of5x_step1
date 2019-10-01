@@ -50,7 +50,7 @@ From: willgpaik/centos7_aci:latest
   
   #source /opt/sw/OpenFOAM/OpenFOAM-5.x/etc/bashrc WM_LABEL_SIZE=64 WM_MPLIB=OPENMPI FOAMY_HEX_MESH=yes
   # Install with WM_LABEL_SIZE=32 -> for CFDEM
-  source /opt/sw/OpenFOAM/OpenFOAM-5.x/etc/bashrc WM_LABEL_SIZE=32 FOAMY_HEX_MESH=yes
+  source /opt/sw/OpenFOAM/OpenFOAM-5.x/etc/bashrc WM_MPLIB=OPENMPI FOAMY_HEX_MESH=yes
     
   # Don't need to build cmake 3.9 since source container already has cmake 3
   #cd $WM_THIRD_PARTY_DIR
