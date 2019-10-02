@@ -66,15 +66,15 @@ From: centos:7
   ./Allwmake -j 2 > log.make 2>&1
   wmRefresh
   
-  #cd $WM_THIRD_PARTY_DIR
+  cd $WM_THIRD_PARTY_DIR
  
   #this will take a while... somewhere between 30 minutes to 2 hours or more
   ./makeParaView -mpi -python -qmake $(which qmake-qt4) > log.makePV 2>&1
   
   wmRefresh
   
-  cd $WM_PROJECT_DIR
-  ./Allwmake -j 2 > log.make 2>&1
+  #cd $WM_PROJECT_DIR
+  #./Allwmake -j 2 > log.make 2>&1
   
-  source /opt/sw/OpenFOAM/OpenFOAM-5.x/etc/bashrc WM_MPLIB=OPENMPI FOAMY_HEX_MESH=yes
+  #source /opt/sw/OpenFOAM/OpenFOAM-5.x/etc/bashrc WM_MPLIB=OPENMPI FOAMY_HEX_MESH=yes
   
