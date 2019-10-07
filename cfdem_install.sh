@@ -56,6 +56,8 @@ cat $CFDEM_bashrc
 
 . $CFDEM_bashrc
 
+export PATH=$BASE/LIGGGHTS/lpp:$PATH
+
 cfdemSysTest
 
 cfdemCompCFDEMall
