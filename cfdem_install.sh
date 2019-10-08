@@ -4,16 +4,18 @@
 cd /opt/sw
 BASE=$PWD
 
-export LD_LIBRARY_PATH=/opt/sw/OpenFOAM/OpenFOAM-5.x/platforms/linux64GccDPInt32Opt/lib:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=/lib64:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=/lib:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=/usr/lib:$LD_LIBRARY_PATH
-export CPATH=/usr/include:$CPATH
-export CPATH=/usr/lib/openmpi/include:$CPATH
 export MPI_ROOT=/opt/sw/OpenFOAM/ThirdParty-5.x/platforms/linux64Gcc/openmpi-2.1.1
 export MPI_ARCH_FLAGS="-DMPICH_SKIP_MPICXX"
 export MPI_ARCH_INC="-I$MPI_ARCH_PATH/include"
 export MPI_ARCH_LIBS='-L$(MPI_ARCH_PATH)/lib -lmpich -lmpichcxx -lmpl -lopa -lrt'
+
+export LD_LIBRARY_PATH=$MPI_ROOT/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/lib:$LD_LIBRARY_PATH
+export CPATH=/usr/include:$CPATH
+export CPATH=$MPI_ROOT/include:$CPATH
+export PATH=$PATH:MPI_ROOT/bin
 . /opt/sw/OpenFOAM/OpenFOAM-5.x/etc/bashrc
 
 mkdir CFDEM
