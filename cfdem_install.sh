@@ -52,9 +52,9 @@ export CFDEM_TUT_DIR=$CFDEM_PROJECT_DIR/tutorials
 export CFDEM_LIGGGHTS_MAKEFILE_POSTIFX=
 export CFDEM_VERBOSE=false
 
-cat $CFDEM_bashrc
+#cat $CFDEM_bashrc
 
-. $CFDEM_bashrc
+source $CFDEM_bashrc
 
 export PATH=$BASE/LIGGGHTS/lpp:$PATH
 
