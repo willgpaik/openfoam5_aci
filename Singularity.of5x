@@ -11,7 +11,9 @@ From: centos:7
   yum -y install zlib-devel libXext-devel libGLU-devel libXt-devel libXrender-devel libXinerama-devel \
       libpng-devel libXrandr-devel libXi-devel libXft-devel libjpeg-turbo-devel libXcursor-devel \
       readline-devel ncurses-devel python python-devel cmake qt-devel qt-assistant \
-      mpfr-devel gmp-devel wget git
+      mpfr-devel gmp-devel wget git which mlocate
+      
+  updatedb
       
   alias wmRefresh="echo blah"
   set +e
