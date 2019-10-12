@@ -16,7 +16,7 @@ export LD_LIBRARY_PATH=/usr/lib:$LD_LIBRARY_PATH
 export CPATH=/usr/include:$CPATH
 export CPATH=$MPI_ROOT/include:$CPATH
 export PATH=$PATH:$MPI_ROOT/bin
-. /opt/sw/OpenFOAM/OpenFOAM-5.x/etc/bashrc
+. /opt/sw/OpenFOAM/OpenFOAM-5.x/etc/bashrc WM_MPLIB=OPENMPI FOAMY_HEX_MESH=yes
 
 mkdir CFDEM
 mkdir LIGGGHTS
