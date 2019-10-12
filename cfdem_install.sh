@@ -37,7 +37,7 @@ export PATH=$PATH:/opt/sw/LIGGGHTS/LIGGGHTS-PUBLIC/lib/vtk/install/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/sw/OpenFOAM/OpenFOAM-5.x/platforms/linux64Gcc48DPInt32Opt/lib
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/sw/LIGGGHTS/LIGGGHTS-PUBLIC/lib/vtk/install/lib
 export CPATH=$CPATH:/opt/sw/OpenFOAM/OpenFOAM-5.x/platforms/linux64Gcc48DPInt32Opt/include
-export CPATH=$CPATH:/opt/sw/LIGGGHTS/IGGGHTS-PUBLIC/lib/vtk/install/include/vtk-8.0
+export CPATH=$CPATH:/opt/sw/LIGGGHTS/LIGGGHTS-PUBLIC/lib/vtk/install/include/vtk-8.0
 
 export CFDEM_VERSION=PUBLIC
 export CFDEM_PROJECT_DIR=/opt/sw/CFDEM/CFDEMcoupling-$CFDEM_VERSION-$WM_PROJECT_VERSION
