@@ -27,26 +27,26 @@ git clone git://github.com/CFDEMproject/LIGGGHTS-PUBLIC.git
 git clone git://github.com/CFDEMproject/LPP.git lpp
 cd LIGGGHTS-PUBLIC/src/MAKE
 sed -i -e '22s/.*/AUTOINSTALL_VTK = "ON"/g' Makefile.user_default
-sed -i -e '130s#.*#VTK_INC_USR=-I/opt/sw/LIGGGHTS/LIGGGHTS-PUBLIC/lib/vtk/install/include/vtk-8.0#g' Makefile.user_default
-sed -i -e '132s#.*#VTK_LIB_USR=-L/opt/sw/LIGGGHTS/LIGGGHTS-PUBLIC/lib/vtk/install/lib#g' Makefile.user_default
+sed -i -e '130s#.*#VTK_INC_USR=-I$BASE/LIGGGHTS/LIGGGHTS-PUBLIC/lib/vtk/install/include/vtk-8.0#g' Makefile.user_default
+sed -i -e '132s#.*#VTK_LIB_USR=-L$BASE/LIGGGHTS/LIGGGHTS-PUBLIC/lib/vtk/install/lib#g' Makefile.user_default
 
 cd $BASE
 
-export PATH=$PATH:/opt/sw/LIGGGHTS/lpp/src:/opt/sw/LIGGGHTS-PUBLIC/src
-export PATH=$PATH:/opt/sw/LIGGGHTS/LIGGGHTS-PUBLIC/lib/vtk/install/bin
+export PATH=$PATH:$BASE/LIGGGHTS/lpp/src:$BASE/LIGGGHTS-PUBLIC/src
+export PATH=$PATH:$BASE/LIGGGHTS/LIGGGHTS-PUBLIC/lib/vtk/install/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/sw/OpenFOAM/OpenFOAM-5.x/platforms/linux64Gcc48DPInt32Opt/lib
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/sw/LIGGGHTS/LIGGGHTS-PUBLIC/lib/vtk/install/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$BASE/LIGGGHTS/LIGGGHTS-PUBLIC/lib/vtk/install/lib
 export CPATH=$CPATH:/opt/sw/OpenFOAM/OpenFOAM-5.x/platforms/linux64Gcc48DPInt32Opt/include
-export CPATH=$CPATH:/opt/sw/LIGGGHTS/LIGGGHTS-PUBLIC/lib/vtk/install/include/vtk-8.0
+export CPATH=$CPATH:$BASE/LIGGGHTS/LIGGGHTS-PUBLIC/lib/vtk/install/include/vtk-8.0
 
 export CFDEM_VERSION=PUBLIC
-export CFDEM_PROJECT_DIR=/opt/sw/CFDEM/CFDEMcoupling-$CFDEM_VERSION-$WM_PROJECT_VERSION
-mkdir -p /opt/sw/CFDEM/$LOGNAME-$CFDEM_VERSION-$WM_PROJECT_VERSION
-export CFDEM_PROJECT_USER_DIR=/opt/sw/CFDEM/$LOGNAME-$CFDEM_VERSION-$WM_PROJECT_VERSION
+export CFDEM_PROJECT_DIR=$BASE/CFDEM/CFDEMcoupling-$CFDEM_VERSION-$WM_PROJECT_VERSION
+mkdir -p $BASE/CFDEM/$LOGNAME-$CFDEM_VERSION-$WM_PROJECT_VERSION
+export CFDEM_PROJECT_USER_DIR=$BASE/CFDEM/$LOGNAME-$CFDEM_VERSION-$WM_PROJECT_VERSION
 export CFDEM_bashrc=$CFDEM_PROJECT_DIR/src/lagrangian/cfdemParticle/etc/bashrc
-export CFDEM_LIGGGHTS_SRC_DIR=/opt/sw/LIGGGHTS/LIGGGHTS-PUBLIC/src
+export CFDEM_LIGGGHTS_SRC_DIR=$BASE/LIGGGHTS/LIGGGHTS-PUBLIC/src
 export CFDEM_LIGGGHTS_MAKEFILE_NAME=auto
-export CFDEM_LPP_DIR=/opt/sw/LIGGGHTS/lpp/src
+export CFDEM_LPP_DIR=$BASE/LIGGGHTS/lpp/src
 export CFDEM_SRC_DIR=$CFDEM_PROJECT_DIR/src
 export CFDEM_SOLVER_DIR=$CFDEM_PROJECT_DIR/applications/solvers
 export CFDEM_DOC_DIR=$CFDEM_PROJECT_DIR/doc
