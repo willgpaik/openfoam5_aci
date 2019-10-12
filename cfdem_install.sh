@@ -25,13 +25,14 @@ git clone git://github.com/CFDEMproject/CFDEMcoupling-PUBLIC.git CFDEMcoupling-P
 cd $BASE/LIGGGHTS
 git clone git://github.com/CFDEMproject/LIGGGHTS-PUBLIC.git
 git clone git://github.com/CFDEMproject/LPP.git lpp
-cd LIGGGHTS-PUBLIC/src/MAKE
+cd LIGGGHTS-PUBLIC/src/
+make auto
 #sed -i -e '22s/.*/AUTOINSTALL_VTK = "ON"/g' Makefile.user_default
 #sed -i -e '130s#.*#VTK_INC_USR=-I$BASE/LIGGGHTS/LIGGGHTS-PUBLIC/lib/vtk/install/include/vtk-8.0#g' Makefile.user_default
 #sed -i -e '132s#.*#VTK_LIB_USR=-L$BASE/LIGGGHTS/LIGGGHTS-PUBLIC/lib/vtk/install/lib#g' Makefile.user_default
-sed -i -e '12s/.*/AUTOINSTALL_VTK = "ON"/g' Makefile.user
-sed -i -e '120s#.*#VTK_INC_USR=-I$BASE/LIGGGHTS/LIGGGHTS-PUBLIC/lib/vtk/install/include/vtk-8.0#g' Makefile.user
-sed -i -e '122s#.*#VTK_LIB_USR=-L$BASE/LIGGGHTS/LIGGGHTS-PUBLIC/lib/vtk/install/lib#g' Makefile.user
+sed -i -e '12s/.*/AUTOINSTALL_VTK = "ON"/g' ./MAKE/Makefile.user
+sed -i -e '120s#.*#VTK_INC_USR=-I$BASE/LIGGGHTS/LIGGGHTS-PUBLIC/lib/vtk/install/include/vtk-8.0#g' ./MAKE/Makefile.user
+sed -i -e '122s#.*#VTK_LIB_USR=-L$BASE/LIGGGHTS/LIGGGHTS-PUBLIC/lib/vtk/install/lib#g' ./MAKE/Makefile.user
 
 cd $BASE
 
