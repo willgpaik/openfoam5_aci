@@ -61,6 +61,6 @@ source $CFDEM_bashrc
 
 export PATH=$BASE/LIGGGHTS/lpp:$PATH
 
-cfdemSysTest
+#cfdemSysTest
 
 cfdemCompCFDEMall
