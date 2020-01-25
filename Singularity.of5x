@@ -2,7 +2,7 @@ BootStrap: docker
 From: centos:7
 
 %environment
-  source /opt/sw/OpenFOAM/OpenFOAM-5.x/etc/bashrc WM_LABEL_SIZE=32 WM_MPLIB=OPENMPI FOAMY_HEX_MESH=yes
+  source /opt/sw/OpenFOAM/OpenFOAM-5.x/etc/bashrc WM_MPLIB=OPENMPI FOAMY_HEX_MESH=yes
 
 
 %post
@@ -62,6 +62,7 @@ From: centos:7
   wmRefresh
   
   cd $WM_PROJECT_DIR
+  ./Allwmake -j 2 > log.make 2>&1
   ./Allwmake -j 2 > log.make 2>&1
   
   source /opt/sw/OpenFOAM/OpenFOAM-5.x/etc/bashrc WM_MPLIB=OPENMPI FOAMY_HEX_MESH=yes
